@@ -11,6 +11,8 @@ import org.rapidpm.dependencies.core.logger.LoggingService;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import static java.lang.System.setProperty;
 
@@ -74,16 +76,21 @@ public class ReservationService {
 //      'start_time': conference start date and time
 //      'duration': scheduled conference duration in seconds
 
-      String json = new StringBuilder().append("{\n")
-                                               .append(" id: 364758328,\n")
-                                               .append(" name: " + name + ",\n")
-//                                    .append(" mail_owner: sven.ruppert@gmail.com,\n")
-                                               .append(" start_time: " + SIMPLE_DATE_FORMAT.format(new Date()) + ",\n")
-                                               .append(" duration: 120\n")
-                                               .append("}")
-                                               .toString();
-      logger.info(json);
-      ctx.json(json);
+//      String json = new StringBuilder().append("{\n")
+//                                               .append(" id: 364758328,\n")
+//                                               .append(" name: " + name + ",\n")
+////                                    .append(" mail_owner: sven.ruppert@gmail.com,\n")
+//                                               .append(" start_time: " + SIMPLE_DATE_FORMAT.format(new Date()) + ",\n")
+//                                               .append(" duration: 120\n")
+//                                               .append("}")
+//                                               .toString();
+
+      final Map<String, String> jsonMap = new HashMap<String, String>();
+      jsonMap.put("id", "364758328");
+      jsonMap.put("name", "name");
+      jsonMap.put("start_time", SIMPLE_DATE_FORMAT.format(new Date()));
+      jsonMap.put("duration", "120");
+      ctx.json(jsonMap);
       ctx.status(200);
     };
     app.get("/" + CONFERENCE, handler);
