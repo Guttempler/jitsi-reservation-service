@@ -75,15 +75,15 @@ public class ReservationService {
 //      'duration': scheduled conference duration in seconds
 
       ctx.result("{\n"
-                 + " 'id': 364758328,\n"
-                 + " 'name': '"
+                 + " id: 364758328,\n"
+                 + " name: "
                  + name
-                 + "',\n"
-                 + " 'mail_owner': 'sven.ruppert@gmail.com',\n"
-                 + " 'start_time': '"
+                 + ",\n"
+                 + " mail_owner: sven.ruppert@gmail.com,\n"
+                 + " start_time: "
                  + SIMPLE_DATE_FORMAT.format(new Date())
-                 + "',\n"
-                 + "  'duration': 120\n"
+                 + ",\n"
+                 + "  duration: 120\n"
                  + "}");
     };
     app.get("/" + CONFERENCE, handler);
