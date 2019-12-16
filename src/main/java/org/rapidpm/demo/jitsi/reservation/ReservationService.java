@@ -62,9 +62,9 @@ public class ReservationService {
 
     Handler handler = ctx -> {
 
-      String name      = ctx.queryParam("name");
-      String startTime = ctx.queryParam("start_time");
-      String mailOwner = ctx.queryParam("mail_owner");
+      String name      = ctx.pathParam("name");
+      String startTime = ctx.pathParam("start_time");
+      String mailOwner = ctx.pathParam("mail_owner");
       logger.info("ctx.name " + name);
       logger.info("ctx.start_time " + startTime);
       logger.info("ctx.mail_owner " + mailOwner);
