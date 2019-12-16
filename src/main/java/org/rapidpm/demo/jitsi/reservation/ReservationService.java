@@ -74,14 +74,16 @@ public class ReservationService {
 //      'start_time': conference start date and time
 //      'duration': scheduled conference duration in seconds
 
-      ctx.result(new StringBuilder().append("{\n")
-                                    .append(" id: 364758328,\n")
-                                    .append(" name: " + name + ",\n")
-                                    .append(" mail_owner: sven.ruppert@gmail.com,\n")
-                                    .append(" start_time: " + SIMPLE_DATE_FORMAT.format(new Date()) + ",\n")
-                                    .append(" duration: 120\n")
-                                    .append("}")
-                                    .toString());
+      String json = new StringBuilder().append("{\n")
+                                               .append(" id: 364758328,\n")
+                                               .append(" name: " + name + ",\n")
+//                                    .append(" mail_owner: sven.ruppert@gmail.com,\n")
+                                               .append(" start_time: " + SIMPLE_DATE_FORMAT.format(new Date()) + ",\n")
+                                               .append(" duration: 120\n")
+                                               .append("}")
+                                               .toString();
+      logger.info(json);
+      ctx.result(json);
     };
     app.get("/" + CONFERENCE, handler);
     app.post("/" + CONFERENCE, handler);
