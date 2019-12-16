@@ -85,11 +85,11 @@ public class ReservationService {
 //                                               .append("}")
 //                                               .toString();
 
-      final Map<String, String> jsonMap = new HashMap<String, String>();
+      final Map<String, Object> jsonMap = new HashMap<>();
       jsonMap.put("id", "364758328");
       jsonMap.put("name", "name");
       jsonMap.put("start_time", SIMPLE_DATE_FORMAT.format(new Date()));
-      jsonMap.put("duration", "120");
+      jsonMap.put("duration", 120);
       ctx.json(jsonMap);
       ctx.status(200);
     };
