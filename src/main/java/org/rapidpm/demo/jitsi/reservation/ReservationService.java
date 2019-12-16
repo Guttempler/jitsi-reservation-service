@@ -83,7 +83,8 @@ public class ReservationService {
                                                .append("}")
                                                .toString();
       logger.info(json);
-      ctx.result(json);
+      ctx.json(json);
+      ctx.status(200);
     };
     app.get("/" + CONFERENCE, handler);
     app.post("/" + CONFERENCE, handler);
