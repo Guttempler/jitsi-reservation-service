@@ -71,11 +71,9 @@ public class ReservationService {
 
       ctx.result("{\n"
                  + "  'id': 364758328,\n"
-                 + "  'name': 'conference1234',\n"
-                 + "  'mail_owner': 'user@server.com',\n"
-                 + "  'start_time': '"
-                 + SIMPLE_DATE_FORMAT.format(new Date())
-                 + "',\n"
+                 + "  'name': '"+name+"',\n"
+                 + "  'mail_owner': 'sven.ruppertgmail.com',\n"
+                 + "  'start_time': '" + SIMPLE_DATE_FORMAT.format(new Date()) + "',\n"
                  + "  'duration': 120\n"
                  + "}");
     };
