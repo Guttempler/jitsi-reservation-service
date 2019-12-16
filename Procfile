@@ -1,0 +1,1 @@
+web: java -jar target/service-app.jar -port $PORT
