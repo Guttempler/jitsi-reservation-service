@@ -86,7 +86,7 @@ public class ReservationService {
 //                                               .toString();
 
       final Map<String, Object> jsonMap = new HashMap<>();
-      jsonMap.put("id", "364758328");
+      jsonMap.put("id", 364758328);
       jsonMap.put("name", name);
       jsonMap.put("start_time", SIMPLE_DATE_FORMAT.format(new Date()));
       jsonMap.put("duration", 120);
