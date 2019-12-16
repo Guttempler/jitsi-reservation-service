@@ -61,7 +61,6 @@ public class ReservationService {
     LoggingService logger = Logger.getLogger(ReservationService.class);
 
     Handler handler = ctx -> {
-
       String name      = ctx.formParam("name");
       String startTime = ctx.formParam("start_time");
       String mailOwner = ctx.formParam("mail_owner");
@@ -69,16 +68,25 @@ public class ReservationService {
       logger.info("ctx.start_time " + startTime);
       logger.info("ctx.mail_owner " + mailOwner);
 
+//      'id': conference identifier assigned by the reservation system
+//      'name': conference room name
+//      'mail_owner': identity of the user who has created the conference
+//      'start_time': conference start date and time
+//      'duration': scheduled conference duration in seconds
+
       ctx.result("{\n"
-                 + "  'id': 364758328,\n"
-                 + "  'name': '"+name+"',\n"
-                 + "  'mail_owner': 'sven.ruppertgmail.com',\n"
-                 + "  'start_time': '" + SIMPLE_DATE_FORMAT.format(new Date()) + "',\n"
+                 + " 'id': 364758328,\n"
+                 + " 'name': '"
+                 + name
+                 + "',\n"
+                 + " 'mail_owner': 'sven.ruppert@gmail.com',\n"
+                 + " 'start_time': '"
+                 + SIMPLE_DATE_FORMAT.format(new Date())
+                 + "',\n"
                  + "  'duration': 120\n"
                  + "}");
     };
     app.get("/" + CONFERENCE, handler);
-
     app.post("/" + CONFERENCE, handler);
   }
 }
