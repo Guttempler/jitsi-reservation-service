@@ -11,7 +11,6 @@ import org.rapidpm.dependencies.core.logger.LoggingService;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
 
 import static java.lang.System.setProperty;
 
@@ -28,9 +27,9 @@ public class ReservationService {
   public static final String CORE_REST_SERVER_PORT = "core-ui-server-port";
 
 
-  public static final String CONFERENCE = "conference";
-  public static final String SDF = "yyyy-MM-dd'T'HH:mm:ss.SSSX";
-public static final SimpleDateFormat formatter = new SimpleDateFormat(SDF);
+  public static final String           CONFERENCE         = "conference";
+  public static final String           SDF                = "yyyy-MM-dd'T'HH:mm:ss.SSSX";
+  public static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat(SDF);
 
 
   private ReservationService() {
@@ -63,7 +62,7 @@ public static final SimpleDateFormat formatter = new SimpleDateFormat(SDF);
 
     Handler handler = ctx -> {
 
-      String name       = ctx.queryParam("name");
+      String name      = ctx.queryParam("name");
       String startTime = ctx.queryParam("start_time");
       String mailOwner = ctx.queryParam("mail_owner");
       logger.info("ctx.name " + name);
@@ -75,7 +74,7 @@ public static final SimpleDateFormat formatter = new SimpleDateFormat(SDF);
                  + "  'name': 'conference1234',\n"
                  + "  'mail_owner': 'user@server.com',\n"
                  + "  'start_time': '"
-                 + formatter.format(new Date())
+                 + SIMPLE_DATE_FORMAT.format(new Date())
                  + "',\n"
                  + "  'duration': 120\n"
                  + "}");
